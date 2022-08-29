@@ -2,7 +2,11 @@
 
 session_start();
 
-require __DIR__ . '/vendor/autoload.php';
+require '../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
+$dotenv->load();
+
 
 $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
