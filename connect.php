@@ -24,19 +24,17 @@ $loginresults     = $unifi_connection->login();
 
 $auth_result = $unifi_connection->authorize_guest($mac, $duration, $up = null, $down = null, $MBytes = null, $ap);
 
-//User will be authorized at this point; their name and email address can be saved to some database now
 ?>
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>WiFi Portal</title>
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta http-equiv="refresh" content="5;url=https://www.google.com/" />
-    </head>
-    <body>
-            <p>You're online! <br>
-            Thanks for visiting us!</p>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>WiFi Portal</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+        <p>You're online! <br>
+        Thanks for visiting us!</p>
+</body>
 </html>
