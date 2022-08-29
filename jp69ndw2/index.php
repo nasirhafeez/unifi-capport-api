@@ -19,9 +19,9 @@ if (isset($_GET['venue-info-url'])) {
   ];
 
   echo json_encode($jsonData);
-}
+} else {
+    ?>
 
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,3 +36,7 @@ if (isset($_GET['venue-info-url'])) {
     </form>
 </body>
 </html>
+
+<?php
+}
+?>
