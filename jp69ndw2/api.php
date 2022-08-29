@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET['venue-info-url'])) {
+//if (isset($_GET['venue-info-url'])) {
   header( "Content-type: application/json" );
 
   $jsonData = [
@@ -12,4 +12,4 @@ if (isset($_GET['venue-info-url'])) {
   ];
 
   echo json_encode($jsonData, JSON_PRETTY_PRINT);
-}
+//}
