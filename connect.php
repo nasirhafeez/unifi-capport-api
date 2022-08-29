@@ -2,27 +2,26 @@
 
 session_start();
 
-$mac = $_SESSION["id"];
-$ap = $_SESSION["ap"];
-$name = $_POST['name'];
-$email = $_POST['email'];
-
 require __DIR__ . '/vendor/autoload.php';
 
-$duration = 30; //Duration of authorization in minutes
-$site_id = 'site_id'; //Site ID found in URL (https://1.1.1.1:8443/manage/site/<site_ID>/devices/1/50)
+$mac = $_SESSION["id"];
+$apmac = $_SESSION["ap"];
 
-$controlleruser     = 'username'; // the user name for access to the UniFi Controller
-$controllerpassword = 'password'; // the password for access to the UniFi Controller
-$controllerurl      = 'https://1.1.1.1:8443'; // full url to the UniFi Controller, eg. 'https://22.22.11.11:8443'
-$controllerversion  = '5.10.21'; // the version of the Controller software, eg. '4.6.6' (must be at least 4.0.0)
+$controlleruser = $_SERVER['CONTROLLER_USER'];
+$controllerpassword = $_SERVER['CONTROLLER_PASSWORD'];
+$controllerurl = $_SERVER['CONTROLLER_URL'];
+$controllerversion = $_SERVER['CONTROLLER_VERSION'];
+$duration = $_SERVER['DURATION'];
+
 $debug = false;
+
+$site_id = $_SERVER['SITE_ID'];
 
 $unifi_connection = new UniFi_API\Client($controlleruser, $controllerpassword, $controllerurl, $site_id, $controllerversion);
 $set_debug_mode   = $unifi_connection->set_debug($debug);
 $loginresults     = $unifi_connection->login();
 
-$auth_result = $unifi_connection->authorize_guest($mac, $duration, $up = null, $down = null, $MBytes = null, $ap);
+$auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, null, $apmac);
 
 ?>
 
