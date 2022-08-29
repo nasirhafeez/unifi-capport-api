@@ -5,8 +5,8 @@ if (isset($_GET['venue-info-url'])) {
 
   $jsonData = [
     "captive" => true,
-    "user-portal-url" => "https://capport.nasirhafeez.com/guest/s/jp69ndw2",
-    "venue-info-url" => "https://capport.nasirhafeez.com/guest/s/jp69ndw2",
+    "user-portal-url" => 'https://capport.nasirhafeez.com/guest/s/jp69ndw2',
+    "venue-info-url" => 'https://capport.nasirhafeez.com/guest/s/jp69ndw2',
     "seconds-remaining" => 63200,
     "can-extend-session" => true
   ];
