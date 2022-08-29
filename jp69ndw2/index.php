@@ -4,8 +4,8 @@ session_start();
 
 //Get the MAC addresses of AP and user
 
-//$_SESSION["id"] = $_GET["id"];
-//$_SESSION["ap"] = $_GET["ap"];
+$_SESSION["id"] = $_GET["id"];
+$_SESSION["ap"] = $_GET["ap"];
 
 if (isset($_GET['venue-info-url'])) {
   header( "Content-type: application/json" );
