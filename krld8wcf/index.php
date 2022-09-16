@@ -4,7 +4,6 @@ session_start();
 
 $_SESSION["id"] = $_GET["id"];
 $_SESSION["ap"] = $_GET["ap"];
-
 ?>
 
 <!doctype html>
